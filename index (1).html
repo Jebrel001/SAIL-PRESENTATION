@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S.A.I.L. — Research Defense Presentation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Subtle Animated Scientific Canvas Background -->
+  <canvas id="bg-particles" aria-hidden="true"></canvas>
+  <div class="ambient-glow glow-blue" aria-hidden="true"></div>
+  <div class="ambient-glow glow-gold" aria-hidden="true"></div>
+
+  <!-- Top Navigation & Presentation Controls -->
+  <header class="topbar" id="topbar">
+    <div class="brand">
+      <div class="brand-badge">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+          <path d="M13 10l-2 4h3l-2 4" stroke="#F2CB65" stroke-width="2"/>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <span class="brand-title">S.A.I.L.</span>
+        <span class="brand-sub">VNHS Research Defense</span>
+      </div>
+    </div>
+
+    <nav class="slide-nav" aria-label="Presentation Sections">
+      <button class="nav-pill active" data-slide="0">1. Title</button>
+      <button class="nav-pill" data-slide="1">2. Introduction</button>
+      <button class="nav-pill" data-slide="2">3. Methodology</button>
+      <button class="nav-pill" data-slide="3">4. Results</button>
+      <button class="nav-pill" data-slide="4">5. Conclusion</button>
+      <button class="nav-pill" data-slide="5">6. Recommendations</button>
+      <button class="nav-pill" data-slide="6">7. Closing</button>
+    </nav>
+
+    <div class="controls">
+      <button id="btn-present" class="ctrl-btn" title="Toggle Presentation Mode (Hides Chrome UI) [P]">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="3" width="20" height="14" rx="2"/>
+          <path d="M8 21h8M12 17v4"/>
+        </svg>
+        <span>Focus Mode</span>
+      </button>
+      <button id="btn-fullscreen" class="ctrl-btn ctrl-btn-gold" title="Toggle Fullscreen [F]">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+        </svg>
+        <span>Fullscreen</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Floating Exit Focus Button (Visible in Focus Mode) -->
+  <button id="btn-exit-focus" class="exit-focus-btn" title="Exit Focus Mode [P or Esc]">
+    Exit Focus Mode
+  </button>
+
+  <!-- Progress Bar -->
+  <div class="progress-track">
+    <div class="progress-fill" id="progress-fill"></div>
+  </div>
+
+  <!-- Main Slide Deck Viewport -->
+  <main class="deck" id="deck">
+
+    <!-- =========================================================
+         PAGE 1: TITLE / HERO SECTION
+         ========================================================= -->
+    <section class="slide active" data-index="0" aria-label="Title Slide">
+      <div class="slide-inner hero-grid">
+        <div class="hero-content">
+          <div class="eyebrow-tag">
+            <span class="pulse-dot"></span>
+            RESEARCH PRESENTATION
+          </div>
+
+          <h1 class="hero-acronym">S.A.I.L.</h1>
+          <h2 class="hero-expansion">Saltwater-Assisted Illumination and Low-Power Charging</h2>
+          <p class="hero-full-title">
+            Design and Development of a Saltwater-Powered Emergency Lamp and Mobile Charging Station
+          </p>
+
+          <div class="hero-subtitle-box">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#F2CB65" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+            <span>"Harnessing Saltwater for Emergency Energy Solutions."</span>
+          </div>
+
+          <div class="hero-actions">
+            <button id="btn-start" class="btn-primary-gold">
+              <span>START PRESENTATION</span>
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </button>
+            <div class="key-hint">Use <kbd>&larr;</kbd> <kbd>&rarr;</kbd> Arrow Keys to Navigate</div>
+          </div>
+
+          <div class="researchers-strip">
+            <span class="strip-label">STUDENT RESEARCHERS:</span>
+            <span>K. S. Abenir &bull; J. J. V. Acuhin &bull; P. S. Gomez &bull; A. Salcedo &bull; K. G. Sison</span>
+          </div>
+        </div>
+
+        <!-- CSS & SVG Generated Scientific Prototype Visualization -->
+        <div class="hero-visual">
+          <div class="prototype-showcase glass-card gold-border">
+            <div class="showcase-header">
+              <span class="status-pill">SYSTEM ARCHITECTURE MODEL</span>
+              <span class="spec-code">NaCl(aq) &bull; 5-CELL SERIES</span>
+            </div>
+
+            <div class="css-lamp-station">
+              <div class="lamp-halo"></div>
+              <div class="lamp-head">
+                <div class="lamp-bulb-core"></div>
+              </div>
+              <div class="lamp-neck"></div>
+
+              <div class="station-body">
+                <div class="station-screen">
+                  <div class="screen-row">
+                    <span class="lbl">CUTOFF</span>
+                    <span class="val gold-txt">11.5 V</span>
+                  </div>
+                  <div class="screen-row">
+                    <span class="lbl">LAMP</span>
+                    <span class="val blue-txt">294.67m</span>
+                  </div>
+                </div>
+                <div class="usb-port-badge">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#F2CB65" stroke-width="2">
+                    <rect x="6" y="2" width="12" height="20" rx="2"/>
+                    <line x1="12" y1="18" x2="12.01" y2="18"/>
+                  </svg>
+                  <span>5V USB OUTPUT</span>
+                </div>
+              </div>
+
+              <div class="cells-rack">
+                <div class="sw-cell"><div class="sw-liquid"></div><span>C1</span></div>
+                <div class="sw-cell"><div class="sw-liquid"></div><span>C2</span></div>
+                <div class="sw-cell"><div class="sw-liquid"></div><span>C3</span></div>
+                <div class="sw-cell"><div class="sw-liquid"></div><span>C4</span></div>
+                <div class="sw-cell"><div class="sw-liquid"></div><span>C5</span></div>
+              </div>
+            </div>
+
+            <div class="showcase-footer">
+              <div><strong>Electrolyte:</strong> Aqueous Sodium Chloride</div>
+              <div><strong>Outputs:</strong> 12V LED Lamp &amp; 5V USB</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PAGE 2: INTRODUCTION
+         ========================================================= -->
+    <section class="slide" data-index="1" aria-label="Introduction">
+      <div class="slide-inner">
+        <div class="section-header">
+          <span class="section-kicker">SECTION 01 &bull; BACKGROUND &amp; PURPOSE</span>
+          <h2 class="section-title">INTRODUCTION</h2>
+        </div>
+
+        <div class="intro-top-grid">
+          <div class="glass-card intro-context-card">
+            <div class="card-icon-header">
+              <div class="icon-box blue-glow">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                </svg>
+              </div>
+              <h3>Research Background</h3>
+            </div>
+            <p class="lead-text">
+              The study focuses on developing and evaluating a prototype that utilizes <strong>saltwater</strong>, specifically <strong>aqueous sodium chloride</strong>, to generate electricity for emergency lighting and limited mobile-phone charging.
+            </p>
+            <div class="context-highlights">
+              <div class="mini-pill">
+                <span class="dot gold"></span>
+                <span>Addresses brownouts &amp; disaster power interruptions</span>
+              </div>
+              <div class="mini-pill">
+                <span class="dot blue"></span>
+                <span>Accessible, low-cost, portable backup energy</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card intro-objectives-card">
+            <div class="card-icon-header">
+              <div class="icon-box gold-glow">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <circle cx="12" cy="12" r="6"/>
+                  <circle cx="12" cy="12" r="2"/>
+                </svg>
+              </div>
+              <h3>Research Objectives</h3>
+            </div>
+            <ol class="objectives-list">
+              <li>
+                <span class="obj-num">01</span>
+                <span>Develop a saltwater-powered emergency lamp and mobile charging station.</span>
+              </li>
+              <li>
+                <span class="obj-num">02</span>
+                <span>Measure the electrical output of the prototype.</span>
+              </li>
+              <li>
+                <span class="obj-num">03</span>
+                <span>Determine the operating duration of the emergency lamp.</span>
+              </li>
+              <li>
+                <span class="obj-num">04</span>
+                <span>Evaluate its mobile-phone charging capability.</span>
+              </li>
+              <li>
+                <span class="obj-num">05</span>
+                <span>Explore its potential as an alternative energy source during power interruptions.</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="glass-card process-flow-card">
+          <div class="flow-title">CONCEPTUAL ENERGY CONVERSION PATHWAY</div>
+          <div class="horizontal-flow">
+            <div class="flow-node">
+              <div class="node-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                </svg>
+              </div>
+              <h4>Saltwater</h4>
+              <p>Energy Source (Aqueous NaCl)</p>
+            </div>
+
+            <div class="flow-arrow" aria-hidden="true">&rarr;</div>
+
+            <div class="flow-node">
+              <div class="node-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="6" width="18" height="12" rx="2"/>
+                  <line x1="8" y1="6" x2="8" y2="18"/>
+                  <line x1="16" y1="6" x2="16" y2="18"/>
+                </svg>
+              </div>
+              <h4>Electrochemical Cells</h4>
+              <p>Electricity-Generating System</p>
+            </div>
+
+            <div class="flow-arrow" aria-hidden="true">&rarr;</div>
+
+            <div class="flow-node">
+              <div class="node-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="7" width="18" height="10" rx="2"/>
+                  <line x1="22" y1="11" x2="22" y2="13"/>
+                  <polygon points="11 9 8 12 11 12 10 15 13 12 10 12 11 9"/>
+                </svg>
+              </div>
+              <h4>Battery</h4>
+              <p>Energy Storage Component</p>
+            </div>
+
+            <div class="flow-arrow dual-split" aria-hidden="true">&#8674;</div>
+
+            <div class="flow-outputs-group">
+              <div class="flow-node output-node">
+                <div class="node-icon gold">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4>LED Lamp</h4>
+                  <p>Lighting Output</p>
+                </div>
+              </div>
+
+              <div class="flow-node output-node">
+                <div class="node-icon gold">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="6" y="2" width="12" height="20" rx="2"/>
+                    <line x1="12" y1="18" x2="12.01" y2="18"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4>USB Module</h4>
+                  <p>Charging Output</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PAGE 3: METHODOLOGY (WITH CIRCUIT DIAGRAM LAYOUT)
+         ========================================================= -->
+    <section class="slide" data-index="2" aria-label="Methodology">
+      <div class="slide-inner">
+        <div class="section-header">
+          <span class="section-kicker">SECTION 02 &bull; RESEARCH FRAMEWORK &amp; CIRCUIT LAYOUT</span>
+          <div class="header-row">
+            <h2 class="section-title">METHODOLOGY</h2>
+            <div class="design-badge">
+              <span>RESEARCH DESIGN:</span>
+              <strong>Developmental &amp; Experimental Research Design</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card timeline-card">
+          <div class="flow-title">EXPERIMENTAL &amp; DEVELOPMENTAL PROCESS TIMELINE</div>
+          <div class="process-timeline">
+            <div class="step-item">
+              <div class="step-circle">1</div>
+              <div class="step-label">Prototype Development</div>
+            </div>
+            <div class="step-item">
+              <div class="step-circle">2</div>
+              <div class="step-label">System Assembly</div>
+            </div>
+            <div class="step-item">
+              <div class="step-circle">3</div>
+              <div class="step-label">Component Integration</div>
+            </div>
+            <div class="step-item">
+              <div class="step-circle">4</div>
+              <div class="step-label">Electrical Output Testing</div>
+            </div>
+            <div class="step-item">
+              <div class="step-circle">5</div>
+              <div class="step-label">Lamp Operating Duration Testing</div>
+            </div>
+            <div class="step-item">
+              <div class="step-circle">6</div>
+              <div class="step-label">Mobile-Phone Charging Testing</div>
+            </div>
+            <div class="step-item">
+              <div class="step-circle gold">7</div>
+              <div class="step-label">Data Recording &amp; Analysis</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="method-bottom-grid circuit-focus-grid">
+          <div class="glass-card schematic-card gold-border">
+            <div class="schematic-topbar">
+              <div class="card-icon-header" style="margin-bottom: 0;">
+                <div class="icon-box gold-glow">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="2" width="8" height="8" rx="1"/>
+                    <rect x="14" y="2" width="8" height="8" rx="1"/>
+                    <rect x="8" y="14" width="8" height="8" rx="1"/>
+                    <path d="M6 10v2h12v-2M12 12v2"/>
+                  </svg>
+                </div>
+                <h3>S.A.I.L. Circuit Layout &amp; System Configuration</h3>
+              </div>
+              <button type="button" id="btn-expand-diagram" class="ctrl-btn ctrl-btn-gold" title="Expand Circuit Diagram for Projector Inspection">
+                <span>Expand Layout</span>
+              </button>
+            </div>
+
+            <div class="circuit-svg-frame" id="circuit-svg-container">
+              <svg viewBox="0 0 1120 760" class="sail-circuit-svg" role="img" aria-label="S.A.I.L. Circuit Layout Diagram">
+                <defs>
+                  <linearGradient id="cellFluid" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.55"/>
+                    <stop offset="100%" stop-color="#1D4ED8" stop-opacity="0.85"/>
+                  </linearGradient>
+                  <linearGradient id="moduleBody" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#1E293B"/>
+                    <stop offset="100%" stop-color="#0F172A"/>
+                  </linearGradient>
+                </defs>
+
+                <!-- Background Panel Surface -->
+                <rect x="6" y="6" width="1108" height="748" rx="16" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+
+                <!-- TOP HEADERS -->
+                <text x="115" y="42" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="800" fill="#0F172A">5 SALTWATER CELLS</text>
+                <text x="115" y="62" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#1E293B">(~4V)</text>
+
+                <text x="415" y="42" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="800" fill="#0F172A">XL6019 BOOSTER MODULE</text>
+                <text x="415" y="62" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#1E293B">(Adjust to 13.8V Output)</text>
+
+                <text x="645" y="96" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="800" fill="#0F172A">Diode 1N5408</text>
+                <line x1="645" y1="104" x2="645" y2="132" stroke="#0F172A" stroke-width="2.5"/>
+                <polygon points="645,138 640,129 650,129" fill="#0F172A"/>
+
+                <!-- Dashed Enclosure Around 5 Saltwater Cells -->
+                <rect x="26" y="74" width="178" height="445" rx="10" fill="none" stroke="#64748B" stroke-width="2" stroke-dasharray="7 5"/>
+
+                <!-- Cell 1 -->
+                <g transform="translate(68, 86)">
+                  <rect x="0" y="0" width="54" height="66" rx="7" fill="#FFFFFF" stroke="#1E293B" stroke-width="2.5"/>
+                  <rect x="2" y="18" width="50" height="46" rx="5" fill="url(#cellFluid)"/>
+                  <rect x="13" y="8" width="8" height="42" rx="2" fill="#94A3B8" stroke="#334155" stroke-width="1.5"/>
+                  <rect x="33" y="8" width="8" height="42" rx="2" fill="#334155" stroke="#0F172A" stroke-width="1.5"/>
+                  <text x="66" y="28" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0F172A">Cell 1</text>
+                  <text x="66" y="46" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#334155">(~1.0V)</text>
+                </g>
+
+                <!-- Cell 2 -->
+                <g transform="translate(68, 170)">
+                  <rect x="0" y="0" width="54" height="66" rx="7" fill="#FFFFFF" stroke="#1E293B" stroke-width="2.5"/>
+                  <rect x="2" y="18" width="50" height="46" rx="5" fill="url(#cellFluid)"/>
+                  <rect x="13" y="8" width="8" height="42" rx="2" fill="#94A3B8" stroke="#334155" stroke-width="1.5"/>
+                  <rect x="33" y="8" width="8" height="42" rx="2" fill="#334155" stroke="#0F172A" stroke-width="1.5"/>
+                  <text x="66" y="28" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0F172A">Cell 2</text>
+                  <text x="66" y="46" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#334155">(~1.0V)</text>
+                </g>
+
+                <!-- Cell 3 -->
+                <g transform="translate(68, 254)">
+                  <rect x="0" y="0" width="54" height="66" rx="7" fill="#FFFFFF" stroke="#1E293B" stroke-width="2.5"/>
+                  <rect x="2" y="18" width="50" height="46" rx="5" fill="url(#cellFluid)"/>
+                  <rect x="13" y="8" width="8" height="42" rx="2" fill="#94A3B8" stroke="#334155" stroke-width="1.5"/>
+                  <rect x="33" y="8" width="8" height="42" rx="2" fill="#334155" stroke="#0F172A" stroke-width="1.5"/>
+                  <text x="66" y="28" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0F172A">Cell 3</text>
+                  <text x="66" y="46" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#334155">(~1.0V)</text>
+                </g>
+
+                <!-- Cell 4 -->
+                <g transform="translate(68, 338)">
+                  <rect x="0" y="0" width="54" height="66" rx="7" fill="#FFFFFF" stroke="#1E293B" stroke-width="2.5"/>
+                  <rect x="2" y="18" width="50" height="46" rx="5" fill="url(#cellFluid)"/>
+                  <rect x="13" y="8" width="8" height="42" rx="2" fill="#94A3B8" stroke="#334155" stroke-width="1.5"/>
+                  <rect x="33" y="8" width="8" height="42" rx="2" fill="#334155" stroke="#0F172A" stroke-width="1.5"/>
+                  <text x="66" y="28" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0F172A">Cell 4</text>
+                  <text x="66" y="46" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#334155">(~1.0V)</text>
+                </g>
+
+                <!-- Cell 5 -->
+                <g transform="translate(68, 422)">
+                  <rect x="0" y="0" width="54" height="66" rx="7" fill="#FFFFFF" stroke="#1E293B" stroke-width="2.5"/>
+                  <rect x="2" y="18" width="50" height="46" rx="5" fill="url(#cellFluid)"/>
+                  <rect x="13" y="8" width="8" height="42" rx="2" fill="#94A3B8" stroke="#334155" stroke-width="1.5"/>
+                  <rect x="33" y="8" width="8" height="42" rx="2" fill="#334155" stroke="#0F172A" stroke-width="1.5"/>
+                  <text x="66" y="28" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0F172A">Cell 5</text>
+                  <text x="66" y="46" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#334155">(~1.0V)</text>
+                </g>
+
+                <!-- Series Jumpers Between Cells -->
+                <path d="M 105 152 L 105 161 L 85 161 L 85 170" fill="none" stroke="#334155" stroke-width="2.5"/>
+                <path d="M 105 236 L 105 245 L 85 245 L 85 254" fill="none" stroke="#334155" stroke-width="2.5"/>
+                <path d="M 105 320 L 105 329 L 85 329 L 85 338" fill="none" stroke="#334155" stroke-width="2.5"/>
+                <path d="M 105 404 L 105 413 L 85 413 L 85 422" fill="none" stroke="#334155" stroke-width="2.5"/>
+
+                <!-- Total ~5V Label -->
+                <text x="115" y="544" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="800" fill="#0F172A">Total ~5V (No Load)</text>
+                <text x="115" y="564" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#1E293B">(~4.5V under load)</text>
+
+                <!-- POSITIVE (+) WIRE: Cell 1 -> XL6019 IN+ -->
+                <path d="M 85 94 L 85 112 L 325 112" fill="none" stroke="#DC2626" stroke-width="4.5" stroke-linejoin="round"/>
+                <text x="218" y="102" font-family="Segoe UI, sans-serif" font-size="20" font-weight="900" fill="#DC2626">+</text>
+                <text x="292" y="102" font-family="Segoe UI, sans-serif" font-size="15" font-weight="800" fill="#0F172A">IN+</text>
+
+                <!-- NEGATIVE (-) WIRE: Cell 5 -> XL6019 IN- -->
+                <path d="M 105 488 L 105 510 L 274 510 L 274 176 L 325 176" fill="none" stroke="#0F172A" stroke-width="4.5" stroke-linejoin="round"/>
+                <text x="220" y="502" font-family="Segoe UI, sans-serif" font-size="22" font-weight="900" fill="#0F172A">&minus;</text>
+                <text x="292" y="168" font-family="Segoe UI, sans-serif" font-size="15" font-weight="800" fill="#0F172A">IN&minus;</text>
+
+                <!-- XL6019 BOOSTER MODULE -->
+                <g transform="translate(332, 86)">
+                  <rect x="0" y="0" width="166" height="114" rx="10" fill="url(#moduleBody)" stroke="#334155" stroke-width="2.5"/>
+                  <circle cx="14" cy="14" r="5" fill="#475569"/>
+                  <circle cx="152" cy="14" r="5" fill="#475569"/>
+                  <circle cx="14" cy="100" r="5" fill="#475569"/>
+                  <circle cx="152" cy="100" r="5" fill="#475569"/>
+                  <rect x="56" y="24" width="54" height="44" rx="6" fill="#334155" stroke="#64748B" stroke-width="1.5"/>
+                  <text x="83" y="51" text-anchor="middle" font-family="Consolas, monospace" font-size="15" font-weight="700" fill="#F8FAFC">470</text>
+                  <circle cx="28" cy="66" r="14" fill="#0F172A" stroke="#94A3B8" stroke-width="1.5"/>
+                  <circle cx="138" cy="66" r="14" fill="#0F172A" stroke="#94A3B8" stroke-width="1.5"/>
+                  <rect x="118" y="20" width="22" height="22" rx="3" fill="#2563EB"/>
+                  <rect x="-8" y="18" width="14" height="16" rx="2" fill="#E2E8F0" stroke="#0F172A"/>
+                  <rect x="-8" y="82" width="14" height="16" rx="2" fill="#E2E8F0" stroke="#0F172A"/>
+                  <rect x="160" y="18" width="14" height="16" rx="2" fill="#E2E8F0" stroke="#0F172A"/>
+                  <rect x="160" y="82" width="14" height="16" rx="2" fill="#E2E8F0" stroke="#0F172A"/>
+                </g>
+                <text x="518" y="102" font-family="Segoe UI, sans-serif" font-size="15" font-weight="800" fill="#0F172A">OUT+</text>
+                <text x="518" y="168" font-family="Segoe UI, sans-serif" font-size="15" font-weight="800" fill="#0F172A">OUT&minus;</text>
+
+                <!-- XL6019 OUT+ -> DIODE 1N5408 -> XH-M609 IN+ -->
+                <path d="M 506 112 L 624 112 L 624 148 L 666 148 L 666 250 L 700 250" fill="none" stroke="#DC2626" stroke-width="4.5" stroke-linejoin="round"/>
+                <g transform="translate(624, 140)">
+                  <rect x="0" y="0" width="42" height="16" rx="3" fill="#1E293B" stroke="#0F172A" stroke-width="1.5"/>
+                  <rect x="30" y="0" width="6" height="16" fill="#E2E8F0"/>
+                </g>
+
+                <!-- XL6019 OUT- -> 12V BATTERY NEGATIVE -->
+                <path d="M 506 176 L 560 176 L 560 356 L 538 356" fill="none" stroke="#0F172A" stroke-width="4.5" stroke-linejoin="round"/>
+
+                <!-- 12V STORAGE BATTERY -->
+                <g transform="translate(322, 326)">
+                  <rect x="24" y="-12" width="22" height="14" rx="2" fill="#DC2626"/>
+                  <rect x="164" y="-12" width="22" height="14" rx="2" fill="#1E293B"/>
+                  <text x="35" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="900" fill="#DC2626">+</text>
+                  <text x="175" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="900" fill="#1E293B">&minus;</text>
+                  <rect x="0" y="0" width="210" height="152" rx="10" fill="#1E293B" stroke="#0F172A" stroke-width="3"/>
+                  <rect x="8" y="34" width="194" height="110" rx="6" fill="#334155"/>
+                  <text x="105" y="76" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="800" fill="#FFFFFF">12V STORAGE BATTERY</text>
+                  <text x="105" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#E2E8F0">(Charge with proper controller)</text>
+                </g>
+
+                <!-- Battery + to XH-M609 IN+ junction -->
+                <path d="M 357 314 L 357 250 L 700 250" fill="none" stroke="#DC2626" stroke-width="4.5" stroke-linejoin="round"/>
+                <!-- Battery - to XH-M609 IN- -->
+                <path d="M 497 314 L 497 294 L 700 294" fill="none" stroke="#0F172A" stroke-width="4.5" stroke-linejoin="round"/>
+
+                <!-- XH-M609 LOW-VOLTAGE CUTOFF -->
+                <text x="765" y="196" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="800" fill="#0F172A">XH-M609</text>
+                <text x="765" y="216" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#1E293B">Low-Voltage Cutoff</text>
+                <text x="684" y="242" font-family="Segoe UI, sans-serif" font-size="14" font-weight="800" fill="#0F172A">IN+</text>
+                <text x="684" y="286" font-family="Segoe UI, sans-serif" font-size="14" font-weight="800" fill="#0F172A">IN&minus;</text>
+
+                <g transform="translate(706, 228)">
+                  <rect x="0" y="0" width="118" height="84" rx="8" fill="#0F172A" stroke="#334155" stroke-width="2.5"/>
+                  <rect x="28" y="16" width="62" height="32" rx="4" fill="#1E293B" stroke="#475569"/>
+                  <text x="59" y="39" text-anchor="middle" font-family="Consolas, monospace" font-size="20" font-weight="900" fill="#F8FAFC">12.0.</text>
+                  <circle cx="14" cy="64" r="7" fill="#334155" stroke="#94A3B8"/>
+                  <circle cx="104" cy="64" r="7" fill="#334155" stroke="#94A3B8"/>
+                  <rect x="46" y="56" width="26" height="14" rx="2" fill="#475569"/>
+                </g>
+                <text x="832" y="242" font-family="Segoe UI, sans-serif" font-size="14" font-weight="800" fill="#0F172A">OUT+</text>
+                <text x="832" y="286" font-family="Segoe UI, sans-serif" font-size="14" font-weight="800" fill="#0F172A">OUT&minus;</text>
+
+                <!-- XH-M609 OUT+ -> SWITCH -> 12V BULB + -->
+                <text x="888" y="216" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="800" fill="#0F172A">SWITCH</text>
+                <path d="M 824 250 L 866 250" fill="none" stroke="#DC2626" stroke-width="4.5"/>
+                <g transform="translate(866, 232)">
+                  <rect x="0" y="0" width="46" height="34" rx="6" fill="#DC2626" stroke="#0F172A" stroke-width="2"/>
+                  <rect x="24" y="6" width="16" height="22" rx="3" fill="#F8FAFC"/>
+                </g>
+                <path d="M 912 250 L 972 250 L 972 288" fill="none" stroke="#DC2626" stroke-width="4.5" stroke-linejoin="round"/>
+
+                <!-- 12V BULB -->
+                <text x="1032" y="216" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="800" fill="#0F172A">12V BULB +</text>
+                <g transform="translate(944, 288)">
+                  <circle cx="28" cy="28" r="26" fill="#FEF08A" stroke="#1E293B" stroke-width="2.5"/>
+                  <path d="M 20 42 L 22 24 L 28 30 L 34 24 L 36 42" fill="none" stroke="#1E293B" stroke-width="2"/>
+                  <rect x="18" y="54" width="20" height="14" rx="3" fill="#94A3B8" stroke="#1E293B" stroke-width="2"/>
+                </g>
+                <text x="1032" y="366" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="800" fill="#0F172A">12V BULB &minus;</text>
+
+                <!-- XH-M609 OUT- -> 5V USB STEP-DOWN & 12V BULB - -->
+                <path d="M 824 294 L 916 294 L 916 342 L 962 342" fill="none" stroke="#0F172A" stroke-width="4.5" stroke-linejoin="round"/>
+                <path d="M 862 294 L 862 560 L 724 560" fill="none" stroke="#0F172A" stroke-width="4.5" stroke-linejoin="round"/>
+
+                <!-- Branch from Red Line to 5V USB Step-Down IN+ -->
+                <path d="M 896 250 L 896 516 L 724 516" fill="none" stroke="#DC2626" stroke-width="4.5" stroke-linejoin="round"/>
+
+                <!-- 5V USB STEP-DOWN MODULE -->
+                <text x="786" y="476" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="800" fill="#0F172A">5V USB Step-Down</text>
+                <text x="786" y="496" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="800" fill="#0F172A">Module</text>
+                <text x="702" y="508" font-family="Segoe UI, sans-serif" font-size="14" font-weight="800" fill="#0F172A">IN+</text>
+                <text x="702" y="552" font-family="Segoe UI, sans-serif" font-size="14" font-weight="800" fill="#0F172A">IN&minus;</text>
+
+                <g transform="translate(730, 504)">
+                  <rect x="0" y="0" width="118" height="72" rx="8" fill="#0F172A" stroke="#334155" stroke-width="2.5"/>
+                  <rect x="22" y="20" width="28" height="28" rx="4" fill="#1E293B" stroke="#64748B"/>
+                  <text x="36" y="39" text-anchor="middle" font-family="Consolas, monospace" font-size="13" font-weight="700" fill="#E2E8F0">88</text>
+                  <rect x="78" y="8" width="32" height="22" rx="2" fill="#CBD5E1" stroke="#475569"/>
+                  <rect x="78" y="40" width="32" height="22" rx="2" fill="#CBD5E1" stroke="#475569"/>
+                </g>
+                <text x="854" y="514" font-family="Segoe UI, sans-serif" font-size="14" font-weight="800" fill="#0F172A">OUT+</text>
+                <text x="854" y="558" font-family="Segoe UI, sans-serif" font-size="14" font-weight="800" fill="#0F172A">OUT&minus;</text>
+
+                <!-- 5V USB OUT+ / OUT- -> CHARGES PHONE -->
+                <path d="M 848 522 L 948 522" fill="none" stroke="#DC2626" stroke-width="4.5"/>
+                <path d="M 848 564 L 948 564" fill="none" stroke="#0F172A" stroke-width="4.5"/>
+
+                <g transform="translate(952, 466)">
+                  <rect x="0" y="0" width="96" height="162" rx="14" fill="#0F172A" stroke="#334155" stroke-width="3"/>
+                  <rect x="8" y="14" width="80" height="134" rx="8" fill="#1E293B"/>
+                  <polygon points="52,44 34,82 48,82 42,118 64,76 49,76" fill="#FACC15"/>
+                </g>
+                <text x="1000" y="650" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="800" fill="#0F172A">CHARGES</text>
+                <text x="1000" y="670" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="800" fill="#0F172A">PHONE</text>
+
+                <!-- BOTTOM LEFT: LEGEND BOX -->
+                <g transform="translate(26, 600)">
+                  <rect x="0" y="0" width="182" height="126" rx="12" fill="#FFFFFF" stroke="#1E293B" stroke-width="2.5"/>
+                  <text x="18" y="30" font-family="Segoe UI, sans-serif" font-size="15" font-weight="900" fill="#0F172A">LEGEND</text>
+                  <line x1="18" y1="62" x2="62" y2="62" stroke="#DC2626" stroke-width="4.5"/>
+                  <text x="74" y="67" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0F172A">Positive (+)</text>
+                  <line x1="18" y1="94" x2="62" y2="94" stroke="#0F172A" stroke-width="4.5"/>
+                  <text x="74" y="99" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0F172A">Negative (&minus;)</text>
+                </g>
+
+                <!-- BOTTOM CENTER: NOTES BOX -->
+                <g transform="translate(226, 600)">
+                  <rect x="0" y="0" width="386" height="126" rx="12" fill="#FFFFFF" stroke="#1E293B" stroke-width="2.5"/>
+                  <text x="18" y="28" font-family="Segoe UI, sans-serif" font-size="15" font-weight="900" fill="#0F172A">NOTES</text>
+                  <text x="20" y="50" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#1E293B">&bull;  Saltwater cells provide ~5V (vary with load).</text>
+                  <text x="20" y="70" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#1E293B">&bull;  XL6019 boosts ~5V to 13.8V for charging.</text>
+                  <text x="20" y="90" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#1E293B">&bull;  XH-M609 prevents over-discharge.</text>
+                  <text x="20" y="110" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#1E293B">&bull;  12V lamp and 5V USB output for emergency use.</text>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <div class="glass-card trials-card gold-border">
+            <div class="card-icon-header">
+              <div class="icon-box gold-glow">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="18" y1="20" x2="18" y2="10"/>
+                  <line x1="12" y1="20" x2="12" y2="4"/>
+                  <line x1="6" y1="20" x2="6" y2="14"/>
+                </svg>
+              </div>
+              <h3>Experimental Trials &amp; Data Analysis</h3>
+            </div>
+
+            <div class="trials-visual">
+              <div class="trial-badge">TRIAL 1</div>
+              <div class="trial-badge">TRIAL 2</div>
+              <div class="trial-badge">TRIAL 3</div>
+              <div class="trial-equals">=</div>
+              <div class="trial-mean-badge">MEAN (AVERAGE)</div>
+            </div>
+
+            <p class="trials-desc">
+              Each performance parameter—electrical output, emergency lamp operating duration, and mobile-phone charging gain—was evaluated across <strong>three repeated experimental trials</strong> to ensure consistency.
+            </p>
+
+            <div class="formula-box">
+              <span class="formula-label">MEAN COMPUTATION:</span>
+              <span class="formula-math">Mean = (Trial 1 + Trial 2 + Trial 3) &divide; 3</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PAGE 4: RESULTS AND DISCUSSION
+         ========================================================= -->
+    <section class="slide" data-index="3" aria-label="Results and Discussion">
+      <div class="slide-inner">
+        <div class="section-header">
+          <span class="section-kicker">SECTION 03 &bull; EMPIRICAL EVALUATION &amp; DATA</span>
+          <h2 class="section-title">RESULTS AND DISCUSSION</h2>
+        </div>
+
+        <div class="results-three-col">
+          <div class="glass-card result-panel">
+            <div class="panel-header">
+              <span class="panel-letter">A</span>
+              <h3>Electrical Output</h3>
+            </div>
+
+            <div class="metric-stack">
+              <div class="metric-card">
+                <span class="metric-label">AVERAGE VOLTAGE RANGE</span>
+                <div class="metric-value electric-txt">0.75&ndash;0.85 <small>V</small></div>
+                <span class="metric-sub">Measured across the 5 electrochemical cells</span>
+              </div>
+
+              <div class="metric-card">
+                <span class="metric-label">AVERAGE POWER OUTPUT RANGE</span>
+                <div class="metric-value gold-txt">0.00556&ndash;0.00745 <small>W</small></div>
+                <span class="metric-sub">Calculated mean power range (P = V &times; I)</span>
+              </div>
+            </div>
+
+            <div class="range-chart-box">
+              <div class="chart-caption">REPORTED AVERAGE OUTPUT RANGES</div>
+
+              <div class="range-row">
+                <div class="range-meta">
+                  <span>Voltage Range (0 &ndash; 1.00 V scale)</span>
+                  <strong>0.75 &ndash; 0.85 V</strong>
+                </div>
+                <div class="range-track">
+                  <div class="range-span blue-span" style="left: 75%; width: 10%;" title="0.75 V to 0.85 V">
+                    <span class="pin-min">0.75V</span>
+                    <span class="pin-max">0.85V</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="range-row">
+                <div class="range-meta">
+                  <span>Power Range (0 &ndash; 0.010 W scale)</span>
+                  <strong>0.00556 &ndash; 0.00745 W</strong>
+                </div>
+                <div class="range-track">
+                  <div class="range-span gold-span" style="left: 55.6%; width: 18.9%;" title="0.00556 W to 0.00745 W">
+                    <span class="pin-min">5.56mW</span>
+                    <span class="pin-max">7.45mW</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card result-panel gold-border">
+            <div class="panel-header">
+              <span class="panel-letter gold">B</span>
+              <h3>Emergency Lamp Duration</h3>
+            </div>
+
+            <div class="timer-gauge-wrapper">
+              <svg class="circular-gauge" viewBox="0 0 220 220">
+                <defs>
+                  <linearGradient id="goldBlueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#2789D8" />
+                    <stop offset="55%" stop-color="#D4AF37" />
+                    <stop offset="100%" stop-color="#F2CB65" />
+                  </linearGradient>
+                </defs>
+                <circle class="gauge-bg" cx="110" cy="110" r="92" />
+                <circle class="gauge-ring" cx="110" cy="110" r="92" />
+              </svg>
+              <div class="gauge-center">
+                <span class="gauge-tag">AVERAGE RUNTIME</span>
+                <div class="gauge-big-num">294.67</div>
+                <div class="gauge-unit">MINUTES</div>
+                <div class="gauge-approx">&approx; 4 HOURS AND 55 MINUTES</div>
+              </div>
+            </div>
+
+            <div class="cutoff-specs">
+              <div class="spec-item">
+                <span class="spec-k">Automatic Protection</span>
+                <span class="spec-v">Operated until low-voltage cutoff disconnected load</span>
+              </div>
+              <div class="spec-item highlight">
+                <span class="spec-k">Cutoff Voltage Threshold</span>
+                <span class="spec-v gold-txt">11.5 V</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card result-panel">
+            <div class="panel-header">
+              <span class="panel-letter">C</span>
+              <h3>Mobile-Phone Charging</h3>
+            </div>
+
+            <div class="charging-hero-stat">
+              <div class="charge-num">+6%</div>
+              <div class="charge-desc">
+                <strong>Average Battery Increase</strong>
+                <span>Within 30-Minute Controlled Test</span>
+              </div>
+            </div>
+
+            <div class="bar-chart-container" id="charging-chart">
+              <div class="chart-caption">BATTERY PERCENTAGE INCREASE (30 MIN)</div>
+              <div class="bars-grid">
+                <div class="bar-col">
+                  <span class="bar-val">6%</span>
+                  <div class="bar-track"><div class="bar-fill blue" style="--h: 60%;"></div></div>
+                  <span class="bar-lbl">Trial 1</span>
+                </div>
+                <div class="bar-col">
+                  <span class="bar-val">7%</span>
+                  <div class="bar-track"><div class="bar-fill blue" style="--h: 70%;"></div></div>
+                  <span class="bar-lbl">Trial 2</span>
+                </div>
+                <div class="bar-col">
+                  <span class="bar-val">5%</span>
+                  <div class="bar-track"><div class="bar-fill blue" style="--h: 50%;"></div></div>
+                  <span class="bar-lbl">Trial 3</span>
+                </div>
+                <div class="bar-col avg-col">
+                  <span class="bar-val gold-txt">6%</span>
+                  <div class="bar-track"><div class="bar-fill gold" style="--h: 60%;"></div></div>
+                  <span class="bar-lbl gold-txt">Average</span>
+                </div>
+              </div>
+            </div>
+
+            <table class="compact-table" aria-label="Mobile-Phone Charging Results">
+              <thead>
+                <tr>
+                  <th>Trial</th>
+                  <th>Battery Percentage Increase</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Trial 1</td><td>6%</td></tr>
+                <tr><td>Trial 2</td><td>7%</td></tr>
+                <tr><td>Trial 3</td><td>5%</td></tr>
+                <tr class="avg-row"><td>Average</td><td>6%</td></tr>
+              </tbody>
+            </table>
+
+            <p class="interpretation-note">
+              "The results indicate that the prototype demonstrated limited mobile-phone charging capability, with an average battery percentage increase of 6% over 30 minutes."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PAGE 5: CONCLUSION
+         ========================================================= -->
+    <section class="slide" data-index="4" aria-label="Conclusion">
+      <div class="slide-inner">
+        <div class="section-header">
+          <span class="section-kicker">SECTION 04 &bull; SYNTHESIS OF FINDINGS</span>
+          <h2 class="section-title">CONCLUSION</h2>
+        </div>
+
+        <div class="glass-card conclusion-hero gold-border">
+          <div class="takeaway-badge">KEY RESEARCH TAKEAWAY</div>
+          <p class="conclusion-statement">
+            The <strong>S.A.I.L. prototype</strong> demonstrated the potential of saltwater-assisted electrochemical cells as an alternative source of energy for emergency use.
+          </p>
+        </div>
+
+        <div class="conclusion-split">
+          <div class="findings-box">
+            <h3 class="sub-heading">Summary of Key Findings</h3>
+            <div class="findings-grid">
+              <div class="glass-card finding-item">
+                <div class="finding-icon">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4>Measurable Electrical Output</h4>
+                  <p>The prototype generated measurable voltage (0.75&ndash;0.85 V) and power output (0.00556&ndash;0.00745 W).</p>
+                </div>
+              </div>
+
+              <div class="glass-card finding-item">
+                <div class="finding-icon gold">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4>294.67 Minutes Lamp Runtime</h4>
+                  <p>The emergency lamp operated for an average of 294.67 minutes (~4 hours and 55 minutes) before automatic 11.5 V cutoff.</p>
+                </div>
+              </div>
+
+              <div class="glass-card finding-item">
+                <div class="finding-icon">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="6" y="2" width="12" height="20" rx="2"/>
+                    <line x1="12" y1="18" x2="12.01" y2="18"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4>+6% Mobile Charging in 30 Min</h4>
+                  <p>Mobile-phone charging showed an average battery percentage increase of 6% in 30 minutes.</p>
+                </div>
+              </div>
+
+              <div class="glass-card finding-item">
+                <div class="finding-icon gold">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4>Emergency Application Potential</h4>
+                  <p>The system demonstrated potential for emergency lighting and low-power communication support.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card limitation-card">
+            <div class="limit-header">
+              <div class="limit-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                  <line x1="12" y1="9" x2="12" y2="13"/>
+                  <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+              </div>
+              <span class="limit-tag">IMPORTANT LIMITATION</span>
+            </div>
+            <h3>Scope of Power Capacity</h3>
+            <p class="limit-text">
+              The prototype <strong>cannot yet replace conventional electricity</strong> or support high-power appliances because of its limited electrical output.
+            </p>
+            <div class="limit-footer">
+              Intended strictly as an experimental low-power emergency backup system.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PAGE 6: RECOMMENDATIONS
+         ========================================================= -->
+    <section class="slide" data-index="5" aria-label="Recommendations">
+      <div class="slide-inner">
+        <div class="section-header">
+          <span class="section-kicker">SECTION 05 &bull; FUTURE WORK &amp; OPTIMIZATION</span>
+          <h2 class="section-title">RECOMMENDATIONS</h2>
+        </div>
+
+        <div class="recommendations-grid">
+          <div class="glass-card rec-card">
+            <div class="rec-top">
+              <span class="rec-num">01</span>
+              <div class="rec-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 11l3 3L22 4"/>
+                  <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                </svg>
+              </div>
+            </div>
+            <h3>Consistency &amp; Reliability Testing</h3>
+            <p>Conduct further testing to evaluate the consistency and reliability of the prototype.</p>
+          </div>
+
+          <div class="glass-card rec-card">
+            <div class="rec-top">
+              <span class="rec-num">02</span>
+              <div class="rec-icon gold">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                </svg>
+              </div>
+            </div>
+            <h3>Electrochemical Cell Output</h3>
+            <p>Improve the electrical output of the saltwater electrochemical cells.</p>
+          </div>
+
+          <div class="glass-card rec-card">
+            <div class="rec-top">
+              <span class="rec-num">03</span>
+              <div class="rec-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="3"/>
+                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                </svg>
+              </div>
+            </div>
+            <h3>Energy Conversion Efficiency</h3>
+            <p>Explore design improvements that may increase energy conversion efficiency.</p>
+          </div>
+
+          <div class="glass-card rec-card">
+            <div class="rec-top">
+              <span class="rec-num">04</span>
+              <div class="rec-icon gold">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="6" y="2" width="12" height="20" rx="2"/>
+                  <path d="M12 7v6M9 10h6"/>
+                </svg>
+              </div>
+            </div>
+            <h3>Charging Capability</h3>
+            <p>Enhance the charging capability of the system.</p>
+          </div>
+
+          <div class="glass-card rec-card">
+            <div class="rec-top">
+              <span class="rec-num">05</span>
+              <div class="rec-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="7" width="18" height="10" rx="2"/>
+                  <line x1="22" y1="11" x2="22" y2="13"/>
+                  <line x1="6" y1="11" x2="6" y2="13"/>
+                  <line x1="10" y1="11" x2="10" y2="13"/>
+                </svg>
+              </div>
+            </div>
+            <h3>Storage &amp; Power Management</h3>
+            <p>Investigate possible improvements to the battery storage and power management system.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PAGE 7: CLOSING / THANK YOU
+         ========================================================= -->
+    <section class="slide" data-index="6" aria-label="Closing Slide">
+      <div class="slide-inner closing-center">
+        <div class="closing-card glass-card gold-border">
+          <div class="closing-emblem">
+            <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="#F2CB65" stroke-width="1.8">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+              <path d="M13 10l-2 4h3l-2 4" stroke="#FFFFFF" stroke-width="2"/>
+            </svg>
+          </div>
+
+          <div class="closing-brand">S.A.I.L.</div>
+          <p class="closing-tagline">
+            "S.A.I.L. &mdash; Harnessing Saltwater for Emergency Energy Solutions."
+          </p>
+
+          <h1 class="thank-you-title">THANK YOU!</h1>
+          <p class="closing-support">We are ready to answer your questions.</p>
+
+          <div class="closing-divider"></div>
+
+          <div class="closing-meta">
+            <span>Valladolid National High School &bull; Senior High School Department</span>
+            <span>Research Adviser: Sir Roybel Jaro</span>
+          </div>
+
+          <button id="btn-restart" class="ctrl-btn" style="margin-top: 1.5rem;">
+            &circlearrowleft; Return to Title Slide
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Slide Controls -->
+  <footer class="bottombar" id="bottombar">
+    <button id="btn-prev" class="nav-arrow-btn" disabled>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+      <span>Previous</span>
+    </button>
+
+    <div class="slide-counter">
+      <span id="current-num">01</span>
+      <span class="sep">/</span>
+      <span id="total-num">07</span>
+      <span class="slide-name-indicator" id="slide-name-indicator">TITLE</span>
+    </div>
+
+    <button id="btn-next" class="nav-arrow-btn next">
+      <span>Next</span>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+    </button>
+  </footer>
+
+  <!-- Projector Inspection Modal for Circuit Layout -->
+  <div class="diagram-modal" id="diagram-modal" role="dialog" aria-modal="true" aria-label="Expanded Circuit Layout">
+    <div class="diagram-modal-backdrop" id="diagram-modal-backdrop"></div>
+    <div class="diagram-modal-content glass-card gold-border">
+      <div class="diagram-modal-header">
+        <div>
+          <span class="section-kicker">SYSTEM CIRCUIT DIAGRAM</span>
+          <h3>S.A.I.L. Saltwater-Powered Emergency Lamp &amp; Mobile Charging Circuit</h3>
+        </div>
+        <button type="button" id="btn-close-diagram" class="ctrl-btn">&#10005; Close (Esc)</button>
+      </div>
+      <div class="diagram-modal-body" id="diagram-modal-body"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
